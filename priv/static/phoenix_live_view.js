@@ -2528,6 +2528,7 @@ removing illegal node: "${(childNode.outerHTML || childNode.nodeValue).trim()}"
             dom_default.copyPrivates(toEl, fromEl);
             if (dom_default.isPortalTemplate(toEl)) {
               portalCallbacks.push(() => this.teleport(toEl, morph));
+              fromEl.innerHTML = toEl.innerHTML;
               return false;
             }
             if (isFocusedFormEl && fromEl.type !== "hidden" && !focusedSelectChanged) {
